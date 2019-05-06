@@ -3,5 +3,4 @@ Gunicorn
 fastai
 werkzeug
 numpy
-os
 PIL
