@@ -3,4 +3,4 @@ Gunicorn
 fastai
 werkzeug
 numpy
-PIL
+Pillow
