@@ -9,12 +9,6 @@ import os
 from os import rename, listdir
 from PIL import Image
 
-class SegLabelListCustom(SegmentationLabelList):
-    def open(self, fn): return open_mask(fn, div=True)
-
-class SegItemListCustom(SegmentationItemList):
-    _label_cls = SegLabelListCustom
-
 path = ''
 export_file_url = 'https://www.dropbox.com/s/bjszupvu7a15ccb/cell_export.pkl?dl=1'
 export_file_name = 'cell_export.pkl'
@@ -45,6 +39,12 @@ def download_if_not_exists(filename, url):
     return False
 
 download_if_not_exists(export_file_name, export_file_url)
+
+class SegLabelListCustom(SegmentationLabelList):
+    def open(self, fn): return open_mask(fn, div=True)
+
+class SegItemListCustom(SegmentationItemList):
+    _label_cls = SegLabelListCustom
 
 learn = load_learner(path, export_file_name)
 
