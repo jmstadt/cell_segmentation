@@ -9,6 +9,10 @@ import os
 from os import rename, listdir
 from PIL import Image
 
+import class_def
+from class_def import SegLabelListCustom
+from class_def import SegItemListCustom
+
 path = ''
 export_file_url = 'https://www.dropbox.com/s/bjszupvu7a15ccb/cell_export.pkl?dl=1'
 export_file_name = 'cell_export.pkl'
